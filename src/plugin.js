@@ -46,6 +46,8 @@ class Logo extends Plugin {
 
   /**
    * Start the plugin after the player is ready.
+   *
+   * @private
    */
   _onPlayerReady() {
     this.player.addClass('vjs-logo');
@@ -60,6 +62,8 @@ class Logo extends Plugin {
 
   /**
    * Setup the plugin.
+   *
+   * @private
    */
   _setup() {
     const video = this.player.el();
