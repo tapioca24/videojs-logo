@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: plugin.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: plugin.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import videojs from 'video.js';
+import {version as VERSION} from '../package.json';
+const Plugin = videojs.getPlugin('plugin');
+
+// Default options for the plugin.
+const defaults = {
+  image: undefined,
+  url: undefined,
+  position: 'top-right',
+  offsetH: 0,
+  offsetV: 0,
+  width: undefined,
+  height: undefined,
+  padding: 5,
+  fadeDelay: 5000,
+  hideOnReady: false
+};
+
+/**
+ * A videojs plugin to display a logo image on the player.
+ */
+class Logo extends Plugin {
+  /**
+   * Create a Logo plugin instance.
+   *
+   * @param {Player} player A Video.js Player instance.
+   * @param {Object} options An optional options object.
+   * @param {string} options.image The URL to the logo image.
+   * @param {string} [options.url] A url to be linked to from the logo. If the user clicks the logo the link will open in a new window.
+   * @param {string} [options.position="top-right"] The location to place the logo (top-left, top-right, bottom-left, or bottom-right).
+   * @param {number} [options.offsetH=0] Horizontal offset (px) from the edge of the video.
+   * @param {number} [options.offsetV=0] Vertical offset (px) from the edge of the video.
+   * @param {number} [options.width] The width of the logo image (px). If not specified, it will be the width of the original image.
+   * @param {number} [options.height] The height of the logo image (px). If not specified, it will be the height of the original image.
+   * @param {number} [options.padding=5] Padding around the logo image (px).
+   * @param {number} [options.fadeDelay=5000] Time until fade-out begins (msec). If `null` is specified, automatic fade-out is not performed.
+   * @param {boolean} [options.hideOnReady=false] Do not show the logo image when the player is ready.
+   */
+  constructor(player, options) {
+    super(player);
+    this.tid = null;
+    this.div = null;
+    this.options = videojs.mergeOptions(defaults, options);
+    this.player.ready(() => this._onPlayerReady());
+  }
+
+  /**
+   * Start the plugin after the player is ready.
+   */
+  _onPlayerReady() {
+    this.player.addClass('vjs-logo');
+    if (!this.options.image) {
+      return;
+    }
+    this._setup();
+    if (!this.options.hideOnReady) {
+      this.show();
+    }
+  }
+
+  /**
+   * Setup the plugin.
+   */
+  _setup() {
+    const video = this.player.el();
+
+    // Create div element
+    const div = document.createElement('div'); // eslint-disable-line no-undef
+
+    div.classList.add('vjs-logo-content');
+    div.classList.add('vjs-logo-hide');
+
+    div.style.padding = this.options.padding + 'px';
+
+    // Setup position
+    const { offsetH, offsetV } = this.options;
+
+    switch (this.options.position) {
+    case 'top-left':
+      div.style.top = offsetV + 'px';
+      div.style.left = offsetH + 'px';
+      break;
+    case 'top-right':
+      div.style.top = offsetV + 'px';
+      div.style.right = offsetH + 'px';
+      break;
+    case 'bottom-left':
+      div.style.bottom = offsetV + 'px';
+      div.style.left = offsetH + 'px';
+      break;
+    case 'bottom-right':
+      div.style.bottom = offsetV + 'px';
+      div.style.right = offsetH + 'px';
+      break;
+    default:
+      div.style.top = offsetV + 'px';
+      div.style.right = offsetH + 'px';
+    }
+    this.div = div;
+
+    // Create img element
+    const img = document.createElement('img'); // eslint-disable-line no-undef
+
+    img.src = this.options.image;
+
+    const { width, height } = this.options;
+
+    if (width) {
+      img.width = width;
+    }
+    if (height) {
+      img.height = height;
+    }
+
+    if (this.options.url) {
+      // Create a element for the image link
+      const a = document.createElement('a'); // eslint-disable-line no-undef
+
+      a.href = this.options.url;
+      a.onclick = e => {
+        e.preventDefault();
+        window.open(this.options.url); // eslint-disable-line no-undef
+      };
+
+      a.appendChild(img);
+      div.appendChild(a);
+    } else {
+      div.appendChild(img);
+    }
+
+    video.appendChild(div);
+  }
+
+  /**
+   * Show the logo image.
+   */
+  show() {
+    // Clear timeout if set
+    if (this.tid) {
+      clearTimeout(this.tid);
+      this.tid = null;
+    }
+
+    // Show the logo image
+    if (this.div) {
+      this.div.classList.remove('vjs-logo-hide');
+    }
+
+    // Set timeout to hide the logo image
+    if (this.options.fadeDelay !== null) {
+      this.tid = setTimeout(() => {
+        this.hide();
+        this.tid = null;
+      }, this.options.fadeDelay);
+    }
+  }
+
+  /**
+   * Hide logo image.
+   */
+  hide() {
+    // Hide the logo image
+    if (this.div) {
+      this.div.classList.add('vjs-logo-hide');
+    }
+  }
+}
+
+// Define default values for the plugin's `state` object here.
+Logo.defaultState = {};
+
+// Include the version number.
+Logo.VERSION = VERSION;
+
+// Register the plugin with video.js.
+videojs.registerPlugin('logo', Logo);
+
+export default Logo;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Logo.html">Logo</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.0-dev</a> on Mon Oct 28 2019 16:31:58 GMT+0900 (GMT+09:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
