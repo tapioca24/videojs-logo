@@ -101,18 +101,18 @@ require(['video.js', 'videojs-logo'], function(videojs) {
 
 ## Configuration
 
-| Property    | Required     | Type       | Default value | Description                                                                                          |
+| Property    | Attributes   | Type       | Default value | Description                                                                                          |
 | ----------- | ------------ | ---------- | ------------- | ---------------------------------------------------------------------------------------------------- |
 | **image**   | **Required** | **String** |               | **The URL to the logo image.**                                                                       |
-| url         |              | String     |               | A url to be linked to from the logo. If the user clicks the logo the link will open in a new window. |
-| position    |              | String     | "top-right"   | The location to place the logo (top-left, top-right, bottom-left, or bottom-right).                  |
-| offsetH     |              | Number     | 0             | Horizontal offset (px) from the edge of the video.                                                   |
-| offsetV     |              | Number     | 0             | Vertical offset (px) from the edge of the video.                                                     |
-| width       |              | Number     |               | The width of the logo image (px). If not specified, it will be the width of the original image.      |
-| height      |              | Number     |               | The height of the logo image (px). If not specified, it will be the height of the original image.    |
-| padding     |              | Number     | 5             | Padding around the logo image (px).                                                                  |
-| fadeDelay   |              | Number     | 5000          | Time until fade-out begins (msec). If `null` is specified, automatic fade-out is not performed.      |
-| hideOnReady |              | Boolean    | false         | Do not show the logo image when the player is ready.                                                 |
+| url         | Optional     | String     |               | A url to be linked to from the logo. If the user clicks the logo the link will open in a new window. |
+| position    | Optional     | String     | "top-right"   | The location to place the logo (top-left, top-right, bottom-left, or bottom-right).                  |
+| offsetH     | Optional     | Number     | 0             | Horizontal offset (px) from the edge of the video.                                                   |
+| offsetV     | Optional     | Number     | 0             | Vertical offset (px) from the edge of the video.                                                     |
+| width       | Optional     | Number     |               | The width of the logo image (px). If not specified, it will be the width of the original image.      |
+| height      | Optional     | Number     |               | The height of the logo image (px). If not specified, it will be the height of the original image.    |
+| padding     | Optional     | Number     | 5             | Padding around the logo image (px).                                                                  |
+| fadeDelay   | Optional     | Number     | 5000          | Time until fade-out begins (msec). If `null` is specified, automatic fade-out is not performed.      |
+| hideOnReady | Optional     | Boolean    | false         | Do not show the logo image when the player is ready.                                                 |
 
 ## Methods
 
