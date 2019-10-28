@@ -52,6 +52,7 @@
     "url": "git+https://github.com/tapioca24/videojs-logo.git"
   },
   "homepage": "https://github.com/tapioca24/videojs-logo",
+  "types": "./index.d.ts",
   "vjsstandard": {
     "ignore": [
       "dist",

@@ -99,6 +99,24 @@ require(['video.js', 'videojs-logo'], function(videojs) {
 });
 ```
 
+### TypeScript
+
+When using with TypeScript, install videojs-logo via npm and `import` the plugin as you would any other module.  
+You can use the `VideoJsLogo` namespace.
+
+```ts
+import videojs, { VideoJsLogo } from 'video.js';
+import 'videojs-logo';
+
+const player = videojs('my-video');
+
+const options: VideoJsLogo.Options = {
+  image: 'my_logo.png',
+  position: VideoJsLogo.Position.BottomLeft
+};
+player.logo(options);
+```
+
 ## Configuration
 
 | Property    | Attributes   | Type       | Default value | Description                                                                                          |
