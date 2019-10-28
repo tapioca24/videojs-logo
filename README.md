@@ -143,7 +143,7 @@ You can also manually show / hide the logo image at any time.
 ```js
 // To show the logo image on the player's play event:
 player.on('play', () => {
-  this.player.logo().show();
+  player.logo().show();
 });
 ```
 
