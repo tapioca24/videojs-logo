@@ -1,6 +1,6 @@
 # videojs-logo
 
-A plugin to display a logo image on the player.
+A video.js plugin to display a logo image on the player.
 
 ![video-js-logo-sample](./img/videojs-logo-sample.png)
 
