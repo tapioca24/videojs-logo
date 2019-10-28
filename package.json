@@ -68,6 +68,7 @@
     "img/",
     "scripts/",
     "src/",
+    "index.d.ts",
     "test/"
   ],
   "husky": {
