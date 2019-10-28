@@ -1,6 +1,6 @@
 {
   "name": "videojs-logo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A plugin to display a logo image on the player.",
   "main": "dist/videojs-logo.cjs.js",
   "module": "dist/videojs-logo.es.js",
