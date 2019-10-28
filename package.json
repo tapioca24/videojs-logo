@@ -47,6 +47,11 @@
   ],
   "author": "tapioca24",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tapioca24/videojs-logo.git"
+  },
+  "homepage": "https://github.com/tapioca24/videojs-logo",
   "vjsstandard": {
     "ignore": [
       "dist",
@@ -59,7 +64,7 @@
     "dist/",
     "docs/",
     "index.html",
-    "img/videojs-logo-transparent.png",
+    "img/",
     "scripts/",
     "src/",
     "test/"
