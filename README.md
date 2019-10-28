@@ -16,6 +16,7 @@ A video.js plugin to display a logo image on the player.
   - [Browserify/CommonJS](#browserifycommonjs)
   - [Browserify/ES6](#browserifyes6)
   - [RequireJS/AMD](#requirejsamd)
+  - [TypeScript](#typescript)
 - [Configuration](#configuration)
 - [Methods](#methods)
 - [License](#license)
