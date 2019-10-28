@@ -20,7 +20,7 @@ declare module "video.js" {
       hideOnReady?: boolean;
     }
 
-    enum Position {
+    const enum Position {
       TopLetf = 'top-left',
       TopRight = 'top-right',
       BottomLeft = 'bottom-left',
