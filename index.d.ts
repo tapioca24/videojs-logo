@@ -10,7 +10,7 @@ declare module "video.js" {
     interface Options {
       image: string;
       url?: string;
-      position?: Position;
+      position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
       offsetH?: number;
       offsetV?: number;
       width?: number;
@@ -18,13 +18,6 @@ declare module "video.js" {
       padding?: number;
       fadeDelay?: number | null;
       hideOnReady?: boolean;
-    }
-
-    const enum Position {
-      TopLetf = 'top-left',
-      TopRight = 'top-right',
-      BottomLeft = 'bottom-left',
-      BottomRight = 'bottom-right'
     }
   }
 

@@ -115,8 +115,7 @@ import 'videojs-logo';
 const player = videojs('my-video');
 
 const options: VideoJsLogo.Options = {
-  image: 'my_logo.png',
-  position: VideoJsLogo.Position.BottomLeft
+  image: 'my_logo.png'
 };
 player.logo(options);
 ```
