@@ -1,3 +1,6 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/tapioca24/videojs-logo/compare/v1.0.13...v2.0.0) (2019-10-29)
+
 <a name="1.0.13"></a>
 ## [1.0.13](https://github.com/tapioca24/videojs-logo/compare/v1.0.12...v1.0.13) (2019-10-28)
 
