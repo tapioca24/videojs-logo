@@ -41,7 +41,8 @@ const defaults = {
   height: undefined,
   padding: 5,
   fadeDelay: 5000,
-  hideOnReady: false
+  hideOnReady: false,
+  opacity: 1
 };
 
 /**
@@ -63,6 +64,7 @@ class Logo extends Plugin {
    * @param {Number} [options.padding=5] Padding around the logo image (px).
    * @param {?Number} [options.fadeDelay=5000] Time until fade-out begins (msec). If `null` is specified, automatic fade-out is not performed.
    * @param {Boolean} [options.hideOnReady=false] Do not show the logo image when the player is ready.
+   * @param {Number} [options.hideOnReady=false] The opacity of the image. If not specified it will default to 1
    */
   constructor(player, options) {
     super(player);
@@ -135,13 +137,17 @@ class Logo extends Plugin {
 
     img.src = this.options.image;
 
-    const { width, height } = this.options;
+    const { width, height, opacity } = this.options;
 
     if (width) {
       img.width = width;
     }
     if (height) {
       img.height = height;
+    }
+    
+    if (opacity) {
+      img.style.opacity = opacity
     }
 
     if (this.options.url) {
