@@ -134,6 +134,7 @@ player.logo(options);
 | padding     | Optional     | Number       | 5             | Padding around the logo image (px).                                                                  |
 | fadeDelay   | Optional     | Number, Null | 5000          | Time until fade-out begins (msec). If `null` is specified, automatic fade-out is not performed.      |
 | hideOnReady | Optional     | Boolean      | false         | Do not show the logo image when the player is ready.                                                 |
+| opacity     | Optional     | Boolean      | 1             | The opacity of the logo (from `[0, 1]`). If not specified, it will default to 1                      |
 
 ## Methods
 
