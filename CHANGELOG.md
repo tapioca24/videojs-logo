@@ -1,3 +1,10 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/tapioca24/videojs-logo/compare/v2.0.0...v2.1.0) (2020-05-01)
+
+### Features
+
+* expose the option to set opacity ([3c67bfa](https://github.com/tapioca24/videojs-logo/commit/3c67bfa))
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/tapioca24/videojs-logo/compare/v1.0.13...v2.0.0) (2019-10-29)
 
