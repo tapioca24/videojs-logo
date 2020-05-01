@@ -18,6 +18,7 @@ declare module "video.js" {
       padding?: number;
       fadeDelay?: number | null;
       hideOnReady?: boolean;
+      opacity?: number;
     }
   }
 
