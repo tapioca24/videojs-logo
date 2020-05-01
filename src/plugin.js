@@ -26,17 +26,17 @@ class Logo extends Plugin {
    *
    * @param {Player} player A Video.js Player instance.
    * @param {Object} options An optional options object.
-   * @param {string} options.image The URL to the logo image.
-   * @param {string} [options.url] A url to be linked to from the logo. If the user clicks the logo the link will open in a new window.
-   * @param {string} [options.position="top-right"] The location to place the logo (top-left, top-right, bottom-left, or bottom-right).
-   * @param {number} [options.offsetH=0] Horizontal offset (px) from the edge of the video.
-   * @param {number} [options.offsetV=0] Vertical offset (px) from the edge of the video.
-   * @param {number} [options.width] The width of the logo image (px). If not specified, it will be the width of the original image.
-   * @param {number} [options.height] The height of the logo image (px). If not specified, it will be the height of the original image.
-   * @param {number} [options.padding=5] Padding around the logo image (px).
+   * @param {String} options.image The URL to the logo image.
+   * @param {String} [options.url] A url to be linked to from the logo. If the user clicks the logo the link will open in a new window.
+   * @param {String} [options.position="top-right"] The location to place the logo (top-left, top-right, bottom-left, or bottom-right).
+   * @param {Number} [options.offsetH=0] Horizontal offset (px) from the edge of the video.
+   * @param {Number} [options.offsetV=0] Vertical offset (px) from the edge of the video.
+   * @param {Number} [options.width] The width of the logo image (px). If not specified, it will be the width of the original image.
+   * @param {Number} [options.height] The height of the logo image (px). If not specified, it will be the height of the original image.
+   * @param {Number} [options.padding=5] Padding around the logo image (px).
    * @param {?Number} [options.fadeDelay=5000] Time until fade-out begins (msec). If `null` is specified, automatic fade-out is not performed.
-   * @param {boolean} [options.hideOnReady=false] Do not show the logo image when the player is ready.
-   * @param {number} [options.opacity=1] The opacity of the image. If not specified it will default to 1
+   * @param {Boolean} [options.hideOnReady=false] Do not show the logo image when the player is ready.
+   * @param {Number} [options.opacity=1] The opacity of the image. If not specified it will default to 1
    */
   constructor(player, options) {
     super(player);
