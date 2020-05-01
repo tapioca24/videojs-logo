@@ -36,7 +36,7 @@ class Logo extends Plugin {
    * @param {number} [options.padding=5] Padding around the logo image (px).
    * @param {?Number} [options.fadeDelay=5000] Time until fade-out begins (msec). If `null` is specified, automatic fade-out is not performed.
    * @param {boolean} [options.hideOnReady=false] Do not show the logo image when the player is ready.
-   * @param {number} [options.hideOnReady=false] The opacity of the image. If not specified it will default to 1
+   * @param {number} [options.opacity=1] The opacity of the image. If not specified it will default to 1
    */
   constructor(player, options) {
     super(player);
