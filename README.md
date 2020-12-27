@@ -1,13 +1,13 @@
 # videojs-logo
 
-If you think it's good, give me a star! :star:
-
 A video.js plugin to display a logo image on the player.
 
 - Abundant customization options
 - TypeScript support
 
 ![video-js-logo-sample](./img/videojs-logo-sample.png)
+
+If you think it's good, give me a star! :star:
 
 ## Table of Contents
 
