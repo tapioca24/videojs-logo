@@ -14,13 +14,11 @@ If you think it's good, give me a star! :star:
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [Installation](#installation)
 - [Usage](#usage)
-  - [`<script>` Tag](#script-tag)
-  - [Browserify/CommonJS](#browserifycommonjs)
-  - [Browserify/ES6](#browserifyes6)
-  - [RequireJS/AMD](#requirejsamd)
+  - [Script tag](#script-tag)
+  - [ES Modules](#es-modules)
+  - [CommonJS](#commonjs)
   - [TypeScript](#typescript)
 - [Configuration](#configuration)
 - [Methods](#methods)
@@ -29,21 +27,36 @@ If you think it's good, give me a star! :star:
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ## Installation
 
+Using npm:
+
 ```sh
-npm install --save videojs-logo
+npm install videojs-logo
+```
+
+Using yarn:
+
+```sh
+yarn add videojs-logo
 ```
 
 ## Usage
 
 To include videojs-logo on your website or web application, use any of the following methods.
 
-### `<script>` Tag
+### Script tag
 
 This is the simplest case. Get the script in whatever way you prefer and include the plugin _after_ you include [video.js][videojs], so that the `videojs` global is available.
 
 ```html
+<!-- include stylesheets -->
+<link href="//path/to/video-js.min.css" rel="stylesheet">
+<link href="//path/to/videojs-logo.css" rel="stylesheet">
+
+<!-- include scripts -->
 <script src="//path/to/video.min.js"></script>
 <script src="//path/to/videojs-logo.min.js"></script>
+
+<!-- initialize videojs-logo -->
 <script>
   var player = videojs('my-video');
 
@@ -53,28 +66,10 @@ This is the simplest case. Get the script in whatever way you prefer and include
 </script>
 ```
 
-### Browserify/CommonJS
+### ES Modules
 
-When using with Browserify, install videojs-logo via npm and `require` the plugin as you would any other module.
-
-```js
-var videojs = require('video.js');
-
-// The actual plugin function is exported by this module, but it is also
-// attached to the `Player.prototype`; so, there is no need to assign it
-// to a variable.
-require('videojs-logo');
-
-var player = videojs('my-video');
-
-player.logo({
-  image: 'my_logo.png'
-});
-```
-
-### Browserify/ES6
-
-When using with Browserify, install videojs-logo via npm and `import` the plugin as you would any other module.
+Install videojs-logo via npm and `import` the plugin as you would any other module.
+You will also need to import the stylesheet in some way.
 
 ```js
 import videojs from 'video.js';
@@ -83,6 +78,7 @@ import videojs from 'video.js';
 // attached to the `Player.prototype`; so, there is no need to assign it
 // to a variable.
 import 'videojs-logo';
+import 'videojs-logo/dist/videojs-logo.css';
 
 const player = videojs('my-video');
 
@@ -91,28 +87,35 @@ player.logo({
 });
 ```
 
-### RequireJS/AMD
+### CommonJS
 
-When using with RequireJS (or another AMD library), get the script in whatever way you prefer and `require` the plugin as you normally would:
+Install videojs-logo via npm and `require` the plugin as you would any other module.
+You will also need to import the stylesheet in some way.
 
 ```js
-require(['video.js', 'videojs-logo'], function(videojs) {
-  var player = videojs('my-video');
+var videojs = require('video.js');
 
-  player.logo({
-    image: 'my_logo.png'
-  });
+// The actual plugin function is exported by this module, but it is also
+// attached to the `Player.prototype`; so, there is no need to assign it
+// to a variable.
+require('videojs-logo');
+require('videojs-logo/dist/videojs-logo.css);
+
+var player = videojs('my-video');
+
+player.logo({
+  image: 'my_logo.png'
 });
 ```
 
 ### TypeScript
 
-When using with TypeScript, install videojs-logo via npm and `import` the plugin as you would any other module.  
-You can use the `VideoJsLogo` namespace.
+When using with TypeScript, you can use the `VideoJsLogo` namespace.
 
 ```ts
 import videojs, { VideoJsLogo } from 'video.js';
 import 'videojs-logo';
+import 'videojs-logo/dist/videojs-logo.css';
 
 const player = videojs('my-video');
 
@@ -136,7 +139,7 @@ player.logo(options);
 | padding     | Optional     | Number       | 5             | Padding around the logo image (px).                                                                  |
 | fadeDelay   | Optional     | Number, Null | 5000          | Time until fade-out begins (msec). If `null` is specified, automatic fade-out is not performed.      |
 | hideOnReady | Optional     | Boolean      | false         | Do not show the logo image when the player is ready.                                                 |
-| opacity     | Optional     | Boolean      | 1             | The opacity of the logo (from `[0, 1]`). If not specified, it will default to 1.                      |
+| opacity     | Optional     | Boolean      | 1             | The opacity of the logo (from `[0, 1]`). If not specified, it will default to 1.                     |
 
 ## Methods
 
