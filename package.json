@@ -74,7 +74,8 @@
     "index.html",
     "scripts/",
     "src/",
-    "test/"
+    "test/",
+    "index.d.ts"
   ],
   "husky": {
     "hooks": {
