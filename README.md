@@ -39,13 +39,28 @@ Using yarn:
 yarn add videojs-logo
 ```
 
+Using jsDelivr CDN:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/videojs-logo@latest/dist/videojs-logo.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-logo@latest/dist/videojs-logo.css">
+```
+
+Using unpkg CDN:
+
+```html
+<script src="https://unpkg.com/videojs-logo@latest/dist/videojs-logo.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/videojs-logo@latest/dist/videojs-logo.css">
+```
+
 ## Usage
 
 To include videojs-logo on your website or web application, use any of the following methods.
 
 ### Script tag
 
-This is the simplest case. Get the script in whatever way you prefer and include the plugin _after_ you include [video.js][videojs], so that the `videojs` global is available.
+This is the simplest case. \
+Get the script in whatever way you prefer and include the plugin _after_ you include [video.js][videojs], so that the `videojs` global is available.
 
 ```html
 <!-- include stylesheets -->
@@ -68,7 +83,7 @@ This is the simplest case. Get the script in whatever way you prefer and include
 
 ### ES Modules
 
-Install videojs-logo via npm and `import` the plugin as you would any other module.
+Install videojs-logo via npm and `import` the plugin as you would any other module. \
 You will also need to import the stylesheet in some way.
 
 ```js
@@ -89,7 +104,7 @@ player.logo({
 
 ### CommonJS
 
-Install videojs-logo via npm and `require` the plugin as you would any other module.
+Install videojs-logo via npm and `require` the plugin as you would any other module. \
 You will also need to import the stylesheet in some way.
 
 ```js
