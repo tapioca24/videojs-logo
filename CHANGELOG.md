@@ -1,3 +1,19 @@
+<a name="2.1.5"></a>
+## [2.1.5](https://github.com/tapioca24/videojs-logo/compare/v2.1.4...v2.1.5) (2021-06-25)
+
+### Chores
+
+* fix known vulnerabilities ([b2f1a89](https://github.com/tapioca24/videojs-logo/commit/b2f1a89))
+* update generator-videojs-plugin to 8.0.0 ([4a96a23](https://github.com/tapioca24/videojs-logo/commit/4a96a23))
+
+### Documentation
+
+* update the documentation ([11d0b2f](https://github.com/tapioca24/videojs-logo/commit/11d0b2f))
+
+### Tests
+
+* add test ([f3a9564](https://github.com/tapioca24/videojs-logo/commit/f3a9564))
+
 <a name="2.1.4"></a>
 ## [2.1.4](https://github.com/tapioca24/videojs-logo/compare/v2.1.3...v2.1.4) (2020-12-27)
 
