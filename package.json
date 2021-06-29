@@ -66,15 +66,7 @@
     ]
   },
   "files": [
-    "CONTRIBUTING.md",
-    "cjs/",
     "dist/",
-    "docs/",
-    "es/",
-    "index.html",
-    "scripts/",
-    "src/",
-    "test/",
     "index.d.ts"
   ],
   "husky": {
