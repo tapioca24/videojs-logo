@@ -1,5 +1,5 @@
 import videojs from 'video.js';
-import {version as VERSION} from '../package.json';
+import { version as VERSION } from '../package.json';
 const Plugin = videojs.getPlugin('plugin');
 
 // Default options for the plugin.
@@ -42,7 +42,7 @@ class Logo extends Plugin {
     super(player);
     this.tid = null;
     this.div = null;
-    this.options = videojs.mergeOptions(defaults, options);
+    this.options = videojs.obj.merge(defaults, options);
     this.player.ready(() => this._onPlayerReady());
   }
 
@@ -127,7 +127,7 @@ class Logo extends Plugin {
       const a = document.createElement('a'); // eslint-disable-line no-undef
 
       a.href = this.options.url;
-      a.onclick = e => {
+      a.onclick = (e) => {
         e.preventDefault();
         window.open(this.options.url); // eslint-disable-line no-undef
       };
