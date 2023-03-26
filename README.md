@@ -22,6 +22,7 @@ If you think it's good, give me a star! :star:
   - [TypeScript](#typescript)
 - [Configuration](#configuration)
 - [Methods](#methods)
+- [Compatibility](#compatibility)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -171,6 +172,15 @@ player.on('play', () => {
 | ------ | ------------------- |
 | show() | Show the logo image |
 | hide() | Hide the logo image |
+
+## Compatibility
+
+videojs-logo vs video.js
+
+| videojs-logo | video.js |
+| ------------ | -------- |
+| v3.x         | v8.x     |
+| v2.x         | v7.x     |
 
 ## License
 

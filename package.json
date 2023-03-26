@@ -1,6 +1,6 @@
 {
   "name": "videojs-logo",
-  "version": "2.1.6",
+  "version": "3.0.0",
   "description": "A video.js plugin to display a logo image on the player.",
   "main": "dist/videojs-logo.cjs.js",
   "module": "dist/videojs-logo.es.js",
@@ -9,7 +9,7 @@
   },
   "browserslist": [
     "defaults",
-    "ie 11"
+    "not ie 11"
   ],
   "scripts": {
     "prebuild": "npm run clean",
@@ -80,7 +80,7 @@
   },
   "dependencies": {
     "global": "^4.4.0",
-    "video.js": "^6 || ^7"
+    "video.js": "^8"
   },
   "devDependencies": {
     "@babel/runtime": "^7.14.0",
