@@ -1,3 +1,20 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/tapioca24/videojs-logo/compare/v2.1.6...v3.0.0) (2023-03-26)
+
+### Features
+
+* add support for video.js v8 ([fe87aad](https://github.com/tapioca24/videojs-logo/commit/fe87aad))
+
+### Documentation
+
+* update the documentation ([a31042e](https://github.com/tapioca24/videojs-logo/commit/a31042e))
+
+
+### BREAKING CHANGES
+
+* remove suport for video.js v7
+* remove suport for IE 11
+
 <a name="2.1.6"></a>
 ## [2.1.6](https://github.com/tapioca24/videojs-logo/compare/v2.1.5...v2.1.6) (2021-06-29)
 
